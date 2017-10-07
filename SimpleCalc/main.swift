@@ -41,5 +41,14 @@ if let input1 = readLine(),
             print(avg)
         }
     }
+
+    if op == "factor" {
+        var fact: Int = 1
+        let n: Int = Int(num1!) + 1
+        for i in 1..<n{
+            fact = fact * i
+        }
+        print(fact)
+    }
 }
 
