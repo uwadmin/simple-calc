@@ -9,11 +9,23 @@
 import Foundation
 
 let input1 = readLine()
-let input2 = readLine()
+let op = readLine()
+let num1 = Double(input1!)
 
-if let response1 = input1,
-   let response2 = input2,
-   let num1 = Int(response1),
-   let num2 = Int(response2) {
-    print("The sum of \(num1) and \(num2) is \(num1 + num2)")
+if op == "+" || op == "-" || op == "*" || op == "/" {
+    let input2 = readLine()
+    let num2 = Double(input2!)
+    if op == "+" {
+        print("\(num1! + num2!)")
+    } else if op == "-" {
+        print("\(num1! - num2!)")
+    } else if op == "*" {
+        print("\(num1! * num2!)")
+    } else if op == "/" {
+        print("\(num1! / num2!)")
+    }
 }
+
+
+
+
