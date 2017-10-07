@@ -26,6 +26,8 @@ if op == "+" || op == "-" || op == "*" || op == "/" {
     }
 }
 
-
-
-
+if op == "count" {
+    let response = "\(input1)"
+    let numbers = response.split(separator: " ")
+    print(numbers.count)
+}
