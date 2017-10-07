@@ -8,26 +8,38 @@
 
 import Foundation
 
-let input1 = readLine()
-let op = readLine()
-let num1 = Double(input1!)
+if let input1 = readLine(),
+   let op = readLine() {
+    let num1 = Double(input1)
 
-if op == "+" || op == "-" || op == "*" || op == "/" {
-    let input2 = readLine()
-    let num2 = Double(input2!)
-    if op == "+" {
-        print("\(num1! + num2!)")
-    } else if op == "-" {
-        print("\(num1! - num2!)")
-    } else if op == "*" {
-        print("\(num1! * num2!)")
-    } else if op == "/" {
-        print("\(num1! / num2!)")
+    if op == "+" || op == "-" || op == "*" || op == "/" {
+        let input2 = readLine()
+        let num2 = Double(input2!)
+        if op == "+" {
+            print("\(num1! + num2!)")
+        } else if op == "-" {
+            print("\(num1! - num2!)")
+        } else if op == "*" {
+            print("\(num1! * num2!)")
+        } else if op == "/" {
+            print("\(num1! / num2!)")
+        }
+    }
+
+    if op == "count" || op == "avg" {
+        let numbers = input1.split(separator: " ")
+        let count = numbers.count;
+        if op == "count" {
+            print(count)
+        }
+        if op == "avg" {
+            let result = numbers.flatMap {
+                Double($0)
+            }
+            let sum = result.reduce(0, +)
+            let avg = sum / Double(count)
+            print(avg)
+        }
     }
 }
 
-if op == "count" {
-    let response = "\(input1)"
-    let numbers = response.split(separator: " ")
-    print(numbers.count)
-}
