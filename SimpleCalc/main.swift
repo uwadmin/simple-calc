@@ -61,9 +61,10 @@ repeat {
                     continue
                 } else {
                     while true {
-                        guard let op = readLine() else {
+                        guard let rawOp = readLine() else {
                             throw "error"
                         }
+                        let op = rawOp.trimmingCharacters(in: .whitespacesAndNewlines)
                         if !isOp(op: op) {
                             print("Please input a valid operator")
                             continue
