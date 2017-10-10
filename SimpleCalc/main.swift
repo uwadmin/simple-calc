@@ -38,8 +38,14 @@ func isCmd(cmd: String) -> Bool {
     return (cmd == "avg" || cmd == "count" || cmd == "fact")
 }
 
+print("Welcome to Chao Ma's simple-calc cli tool for some basic calculations\n" +
+        "You could type a number and return. Then type the operator (+ - * / %)\n" +
+        "and return and then type another number to do the basic calculations.\n" +
+        "You could also type \"a b c {command}\" for other calculations. Available\n" +
+        "ones are \"count\", \"avg\" and \"fact\".\n")
 repeat {
     while true {
+        print("Please type below: ")
         guard let rawInput1 = readLine() else {
             throw "error"
         }
